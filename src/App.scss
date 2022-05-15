@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$primary_color:#F34636;
+$secondary_color:#eeb600;
+$dark_color:#1d1d1b;
+*,*::before,*::after
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+background: $dark_color;
+@media screen and (max-width:900px) {
+    font-size: 70%;
+}
+}
+.row
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+    &>*{
+        flex:1 1 40%;
+
+    }
+    @media screen and (max-width:900px) {
+        &>*{
+            flex:1 1 51%;
+        }
+    }
+}
+
+    button{
+    // border-radius: .3em;
+        font-size: .9rem;
+        color: white;
+        outline: none;
+        // border-radius: .3em;
+        border: none;
+        padding: .8rem .8rem;
+        cursor: pointer;
+}
+::-webkit-scrollbar {
+    width: 1em;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.815);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.63);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: dodgerblue;
+  }
+  
+.App
+{
+    
+
+     
+    
+margin:2rem;
+    // margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+ 
+
+    h1
+    {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        color: lighten($secondary_color,10);
+        margin-bottom:1rem ;
+        span{
+            color: white;
+        }
+    }
+.btn_group
+{
+    width: 100%;
+    display: flex;
+    @media screen and (max-width:900px) {
+        justify-content: center;
+    }
+    button{
+    
+        &.emoji_button
+        {
+            background: $primary_color;
+        }
+        &.emoji_name_button
+        {
+            background: $secondary_color;
+
+        }
+      }
+     
+}
+form{
+    width: 100%;
+    margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: flex-start;
+    @media screen and (max-width:900px) {
+        justify-content: center;
+    }
+    align-items: center;
+    &>*{
+        
+        // flex: 1 1;
+    }
+    button{
+        background: $secondary_color;
+    }
+    ::placeholder{
+        color:rgba(42, 40, 40, 0.699);
+    }
+input
+{
+    
+    // color: rgba(0, 0, 0, 0.274);
+    width: 46%;
+    @media screen and (max-width:900px) {
+    width: 78%;
+
+    }
+    outline: none;
+    border-top-left-radius: .3em;
+    border-bottom-left-radius: .3em;
+    border: none;
+    background: rgba(255, 255, 255, 0.904);
+    padding: .8rem .8rem;
+}
+}
+
+.emoji_container
+{
+   
+    .row{
+        flex-wrap:nowrap;
+        // justify-content: center;
+        // align-items: center;
+        flex-direction: row;
+        text-align: center;
+    }
+    @media screen and (max-width:900px) {
+        .row{
+        flex-direction: column;
+text-align: left;
+            align-items: flex-start;
+        }  
+    }
+    @media screen and (max-width:900px) {
+
+        height: 40vh;
+        width: 98vw;
+        
+    }
+    overflow-y: scroll;
+    height: 80vh;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.137);
+    background: $primary_color;
+padding: .5rem;
+
+color:white;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+@media screen and (max-width:900px) {
+//     padding: .5rem;
+// gap: 1rem;
+overflow-x: hidden;
+
+border-bottom: .2rem solid;
+}
+h3{
+    height: 100%;
+    text-transform: uppercase;
+    display: grid;
+    place-content: center;
+    font-weight: 500;
+    font-size: 2rem;
+}
+.emoji_info
+{
+    // background: rgb(11, 33, 36);
+    background: darken($primary_color,10);
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    padding: 1rem;
+// .row{
+//     justify-content: space-between;
+
+// }
+@media screen and (max-width:900px) {
+
+    gap: .1rem;
+}
+
+    span
+    {
+        font-size: .9rem;
+        // &:not(:last-child)
+        // {
+        //     margin: 0 .2rem ;
+        // }
+        display: inline-block;
+        // width: 6rem;
+        // border-radius: .3em;
+        padding: .2rem .5em;
+        background: $primary_color;
+        color:white;
+        // margin-bottom: .5rem;
+
+    }
+    
+  
+  
+  .emoji
+  {
+font-size: 2.5rem;
+text-align: center;
+
+  }  
+  .emoji_desc,.emoji_aliases,.emoji_category
+  {
+      outline: 1px solid;
+      display: flex;
+    font-size: .9rem;
+    // width: 20%;
+
+    word-wrap: break-word;
+    flex-direction: column;
+    // gap: 1em;
+    :not(span)
+    {
+        padding: 1rem;
+    }
+    @media screen and (max-width:900px) {
+outline: none;
+word-wrap: break-word;
+  
+:not(span)
+{
+    padding: .5rem;
+}
+        flex-direction: row;
+        align-items: center;
+ 
+    
+}
+  }
+  
+
+}
+}
+.emoji_box
+{
+   
+    overflow-y: scroll;
+padding: 2rem;
+height: 80vh;
+
+    background: $secondary_color;
+    @media screen and (max-width:900px) {
+
+        height: 40vh;
+
+    }
+    h2
+    {
+        text-align: center;
+        color: white;
+        margin-bottom: 1rem;
+    }
+}
+}
